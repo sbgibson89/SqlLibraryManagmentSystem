@@ -1,0 +1,50 @@
+-- create database library;
+use library;
+-- create table books(
+-- 	book_id int auto_increment primary key,
+--     title varchar(250) not null,
+--     author varchar(250) not null,
+--     genre varchar(100),
+--     published_year year,
+--     available boolean default true
+-- );
+-- create table library_members(
+-- 	member_id int not null auto_increment primary key,
+--     name varchar(250) not null,
+--     email varchar(250),
+--     phone_number varchar(15),
+--     join_date date default (current_date)
+-- );	
+-- create table librarians(
+-- 	librarian_id int not null auto_increment primary key,
+--     name varchar(250) not null,
+--     email varchar(250),
+--     phone_number varchar(15),
+--     hire_date date default (current_date)
+-- );
+-- create table loans(
+-- 	loan_id int not null auto_increment primary key,
+--     book_id int,
+--     member_id int,
+--     borrow_date date default (current_date),
+--     return_date date,
+--     librarian_id int,
+--     foreign key(book_id) references books(book_id),
+--     foreign key(member_id) references library_members(member_id),
+--     foreign key(librarian_id) references librarians(librarian_id)
+-- );
+-- insert into books (title, author, genre, published_year) values
+-- 	('THE GREAT GATSBY', 'F. SCOTT FITZGERALD', 'FICTION', 1925),
+--     ('1984', 'GEORGE ORWELL', 'DYSTOPEAN', 1949),
+--     ('TO KILL A MOCKINGBIRD', 'HARPER LEE', 'CLASSIC', 1960);
+-- insert into LIBRARY_MEMBERS(NAME, EMAIL, PHONE_NUMBER) VALUES
+-- 	('ALLAN KINGSTON', 'KINGSTON@GMAIL.COM', '8041234567'),
+--     ('ALICIA HAUS', 'ALICIAHAUS@YAHOO.COM', '8042345671');
+-- INSERT INTO LIBRARIANS(NAME,EMAIL,PHONE_NUMBER) VALUES
+-- 	('BRENDA HUGHS', 'BHUGHS76@GMAIL.COM', '1234567890'),
+--     ('BENJAMIN MCGRAW', 'BENMCGRAW996@GMAIL.COM', '1239087654');
+ --    INSERT INTO LOANS(BOOK_ID, MEMBER_ID, LIBRARIAN_ID, BORROW_DATE) VALUES
+-- 		(1,1,1, CURRENT_DATE);
+-- 	SELECT* FROM LOANS
+-- update BOOKS SET AVAILABLE=FALSE where BOOK_ID=1;
+SELECT* FROM BOOKS
