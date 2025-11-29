@@ -55,3 +55,9 @@ select m.name, b.title, l.borrow_date, l.return_date from loans l
 join library_members m on l.member_id=m.member_id
 join books b on l.book_id=b.book_id
 where m.member_id=1;
+select m.name, b.title, l.borrow_date
+from loans l
+join library_members m on l.member_id=m.member_id
+join books b on l.book_id=b.book_id
+where l.return_date is null
+and l.borrow_date<current_date-interval 14 day;
