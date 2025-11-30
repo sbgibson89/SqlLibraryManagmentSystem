@@ -60,6 +60,9 @@ from loans l
 join library_members m on l.member_id=m.member_id
 join books b on l.book_id=b.book_id
 where l.return_date is null
+select title, author, published_year
+from books
+where published_year>1950;
 and l.borrow_date<current_date-interval 14 day;
 select title, genre, published_year
 from books
