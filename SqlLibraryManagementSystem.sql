@@ -67,3 +67,6 @@ and l.borrow_date<current_date-interval 14 day;
 select title, genre, published_year
 from books
 where author='George Orwell';
+select title, author, published_year
+from books
+where published_year>1950;
