@@ -70,3 +70,5 @@ where author='George Orwell';
 select title, author, published_year
 from books
 where published_year>1950;
+select count(*) as total_books
+from books
