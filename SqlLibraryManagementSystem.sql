@@ -49,8 +49,8 @@ use library;
 -- update BOOKS SET AVAILABLE=FALSE where BOOK_ID=1;
 -- SELECT* FROM BOOKS
 UPDATE LOANS SET RETURN_DATE=current_date WHERE LOAN_ID=1;
- UPDATE BOOKS SET AVAILABLE=TRUE WHERE BOOK_ID=1;
- SELECT* FROM BOOKS WHERE AVAILABLE=TRUE;
+UPDATE BOOKS SET AVAILABLE=TRUE WHERE BOOK_ID=1;
+SELECT* FROM BOOKS WHERE AVAILABLE=TRUE;
 select m.name, b.title, l.borrow_date, l.return_date from loans l
  join library_members m on l.member_id=m.member_id
  join books b on l.book_id=b.book_id
@@ -59,7 +59,7 @@ select m.name, b.title, l.borrow_date
  from loans l
  join library_members m on l.member_id=m.member_id
  join books b on l.book_id=b.book_id
- where l.return_date is null
+ where l.return_date is null;
 select title, author, published_year
  from books
  where published_year>1950;
@@ -71,9 +71,13 @@ select title, author, published_year
  from books
  where published_year>1950;
 select count(*) as total_books
- from books
+ from books;
 select m.name, l.borrow_date, l.return_date
  from loans l
  join library_members m on l.member_id=m.member_id
  join books b on l.book_id=b.book_id
- where b.title='1984'
+ where b.title='1984';
+select b.title, l.borrow_date, l.return_date
+	from loans l
+ join books b on l.book_id=b.book_id
+ where l.member_id=1;
