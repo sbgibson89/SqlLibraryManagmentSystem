@@ -79,5 +79,5 @@ select m.name, l.borrow_date, l.return_date
  where b.title='1984';
 select b.title, l.borrow_date, l.return_date
 	from loans l
- join books b on l.book_id=b.book_id
- where l.member_id=1;
+	join books b on l.book_id=b.book_id
+	where l.member_id=1;
