@@ -52,40 +52,46 @@ UPDATE LOANS SET RETURN_DATE=current_date WHERE LOAN_ID=1;
 UPDATE BOOKS SET AVAILABLE=TRUE WHERE BOOK_ID=1;
 SELECT* FROM BOOKS WHERE AVAILABLE=TRUE;
 select m.name, b.title, l.borrow_date, l.return_date from loans l
- join library_members m on l.member_id=m.member_id
- join books b on l.book_id=b.book_id
- where m.member_id=1;
+	join library_members m on l.member_id=m.member_id
+	join books b on l.book_id=b.book_id
+where m.member_id=1;
 select m.name, b.title, l.borrow_date
- from loans l
- join library_members m on l.member_id=m.member_id
- join books b on l.book_id=b.book_id
- where l.return_date is null;
+	from loans l
+	join library_members m on l.member_id=m.member_id
+	join books b on l.book_id=b.book_id
+where l.return_date is null;
 select title, author, published_year
- from books
- where published_year>1950;
- and l.borrow_date<current_date-interval 14 day;
+	from books
+	where published_year>1950;
+and l.borrow_date<current_date-interval 14 day;
 select title, genre, published_year
- from books
- where author='George Orwell';
+	from books
+where author='George Orwell';
 select title, author, published_year
- from books
- where published_year>1950;
+from books
+where published_year>1950;
 select count(*) as total_books
- from books;
+from books;
 select m.name, l.borrow_date, l.return_date
- from loans l
- join library_members m on l.member_id=m.member_id
- join books b on l.book_id=b.book_id
- where b.title='1984';
+	from loans l
+	join library_members m on l.member_id=m.member_id
+	join books b on l.book_id=b.book_id
+where b.title='1984';
 select b.title, l.borrow_date, l.return_date
 	from loans l
 	join books b on l.book_id=b.book_id
-	where l.member_id=1;
+where l.member_id=1;
 select title, author, published_year
 	from books
 	where genre='fiction'
-	and available=true;
+and available=true;
 select m.name,count(l.loan_id) as total_books_borrowed
 	from Loans l
 	join library_members m on l.member_id=m.member_id
-	group by m.name;
+group by m.name;
+select m.name, b.title, l.borrow_date
+	from loans l
+	join library_members m on l.member_id=m.member_id
+	join books b on l.book_id=b.book_id
+	where l.return_date is null
+and l.borrow_date<current_date-interval 30 day;
