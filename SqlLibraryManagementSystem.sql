@@ -85,3 +85,7 @@ select title, author, published_year
 	from books
 	where genre='fiction'
 	and available=true;
+select m.name,count(l.loan_id) as total_books_borrowed
+	from Loans l
+	join library_members m on l.member_id=m.member_id
+	group by m.name;
