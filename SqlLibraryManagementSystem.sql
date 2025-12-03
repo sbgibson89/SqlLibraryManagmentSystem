@@ -95,3 +95,8 @@ select m.name, b.title, l.borrow_date
 	join books b on l.book_id=b.book_id
 	where l.return_date is null
 and l.borrow_date<current_date-interval 30 day;
+select lb.name, count(l.loan_id) as total_loans
+	from loans l
+    join librarians lb on l.librarian_id-lb.librarian_id
+    group by lb.name
+order by total_loans desc;
