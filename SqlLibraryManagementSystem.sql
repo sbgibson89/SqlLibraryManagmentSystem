@@ -100,3 +100,8 @@ select lb.name, count(l.loan_id) as total_loans
     join librarians lb on l.librarian_id-lb.librarian_id
     group by lb.name
 order by total_loans desc;
+select m.name, b.title, l.borrow_date
+	from loans l
+    join library_members m on l.member_id=m.member_id
+    join books b on l.book_id=b.book_id
+where l.return_date is null;
