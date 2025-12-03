@@ -81,3 +81,7 @@ select b.title, l.borrow_date, l.return_date
 	from loans l
 	join books b on l.book_id=b.book_id
 	where l.member_id=1;
+select title, author, published_year
+	from books
+	where genre='fiction'
+	and available=true;
